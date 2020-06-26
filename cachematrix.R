@@ -1,10 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The code for make inverse of matrix written by jinendra sontakke
+
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
-  inv <- NULL
+makeCacheMatrix <- function(x = matrix()) {   ## create an makecaachematrix function
+  inv <- NULL                                 ## define inv function
   set <- function(y){
     x <<- y
     inv <<- NULL
@@ -19,13 +19,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-        inv <- x$getInverse()
-        if(!is.null(inv)){
-          message("getting cached data")
+cacheSolve <- function(x, ...) {   ## Create an cachesolve function
+        inv <- x$getInverse()      ## define inverse of matrix
+        if(!is.null(inv)){      
+          message("getting cached data")  ## print message when i if works
           return(inv)
         }
-        mat <- x$get()
+        mat <- x$get()            
         inv <- solve(mat, ...)
         x$setInverse(inv)
         inv
